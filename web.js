@@ -4,12 +4,12 @@ var url = require('url')
 var server = http.createServer(function (request, response){
 	var requestType = request['method']
 	if (requestType == 'GET'){
-		console.log(request['method'])
+		response.write(request['method'])
 
 	}
 	else if (requestType == 'POST'){
 		request.on("data", function (chunk){
-			console.log(chunk.toString())
+			response.write(chunk.toString())
 		})
 	}
 	response.writeHead(200, {'Content-Type':'Json'})

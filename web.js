@@ -2,19 +2,24 @@ var http = require('http')
 var url = require('url')
 
 var server = http.createServer(function (request, response){
-	var requestType = request['method']
+	response.writeHead(200, {'Content-Type':'application/json'});
+	response.write('test')
+	response.end()
+	/*
+	var requestType = request['method'];
 	if (requestType == 'GET'){
-		response.write(request['method'])
-
+		console.log('hello')
+		//response.write('hello')
 	}
 	else if (requestType == 'POST'){
 		request.on("data", function (chunk){
-			response.write(chunk.toString())
+			//response.write(chunk.toString())
 		})
-	}
+	})
 	response.writeHead(200, {'Content-Type':'Json'})
 	var pathname = url.parse(request.url).pathname
-	response.end()
+	response.end('test')
+	*/
 })
 
 

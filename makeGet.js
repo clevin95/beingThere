@@ -11,7 +11,7 @@ function executeGet(){
 				return err;
 			}
 			else{
-				console.log(result.rows)
+				return JSON.stringify(result.rows);
 			}
 		});
 		//console.log(client);

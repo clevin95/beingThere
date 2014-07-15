@@ -8,6 +8,7 @@ function route (request, callbackToServer){
 	var method = request.method;
 	var	reqUrl = request.url;
 	var pathname = url.parse(reqUrl).pathname;
+	console.log(process.env.HEROKU_POSTGRESQL_VIOLET_URL);
 	if (pathname == "/posts"){
 		posts.get(function (err, callbackValue){
 			callbackToServer(err, callbackValue);
@@ -19,7 +20,7 @@ function route (request, callbackToServer){
 		});
 	}
 	else{
-		callback(null, null);
+		callbackToServer(null, "route please");
 	}
 }
 

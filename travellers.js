@@ -12,6 +12,7 @@ function get(callback){
 				callback(null, travellerRows);
 			}
 		});
+		done();
 	});
 }
 

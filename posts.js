@@ -1,9 +1,16 @@
 var pg = require('pg')
 
 function get (callback){
+	console.log("will connect to database");
 	pg.connect(process.env.HEROKU_POSTGRESQL_VIOLET_URL , function(err, client, done) {
+		console.log("will begin get request");
+		if (err){
+			console.log(err)
+			throw err;
+		}
 		client.query ('SELECT * FROM post', function (err, result) {
 			if(err){
+				console.log("erroR!")
 				callback(err, null);
 			}
 			else{
@@ -11,6 +18,7 @@ function get (callback){
 				callback(null, postRows);
 			}
 		});
+		done();
 	});
 }
 

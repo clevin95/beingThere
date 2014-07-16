@@ -16,14 +16,11 @@ function start(route){
 			}
 			response.end();
 		});
-
 	});
-	
 	var port = Number(process.env.PORT || 5050);
 	server.listen(port, function() {
 		console.log("Listening on " + port);
 	});
-
 }
 
 exports.start = start

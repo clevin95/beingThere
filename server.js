@@ -7,9 +7,7 @@ var pg = require('pg');
 function start(route){
 	var server = http.createServer(function (request, response){
 		response.writeHead(200, {'Content-Type':'application/json'});
-		
 		route(request, function (err, callbackValue){
-
 			if (err){
 				response.write(err.toString());
 			}

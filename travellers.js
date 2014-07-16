@@ -5,6 +5,7 @@ function get(callback){
 		client.query('SELECT * FROM travellers', function(err, result) {
 			if(err){
 				callback(err, null);
+				callback(err, null);
 			}
 			else{
 				var travellerRows = JSON.stringify(result.rows);

@@ -1,5 +1,7 @@
 var pg = require('pg')
-var databaseURL = "postgres://localhost:5432/localherokudb"
+var databaseURL = process.env.HEROKU_POSTGRESQL_VIOLET_URL
+var localDB = "postgres://localhost:5432/localherokudb"
+
 
 function get (callback){
 	pg.connect(databaseURL , function(err, client, done) {
